@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--命名空间必须加上-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body style="margin-left:70px; margin-right:70px">
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>名称</th>
+        <th>地址</th>
+        <th>邮箱</th>
+        <th>电话</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${userlist}">
+        <td th:text="${userStat.count}"></td>
+        <td th:text="${user.nick}"></td>
+        <td th:text="${user.address}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.phone}"></td>
+    </tr>
+    <tr style="text-align: center">
+        <td colspan="5">
+            <span th:if="${curPage <= 1}">
+               首页
+                上一页
+            </span>
+            <span th:if="${curPage > 1}">
+                <a th:href="@{'/index'}">首页</a>
+                <a th:href="@{'/index?curPage=' + ${curPage - 1}}">上一页</a>
+            </span>
+            <span th:if="${curPage == totalPages}">
+                下一页
+            尾页
+            </span>
+            <span th:if="${curPage < totalPages}">
+                <a th:href="@{'/index?curPage=' + ${curPage + 1}}">下一页</a>
+                <a th:href="@{'/index?curPage=' + ${totalPages}}">尾页</a>
+            </span>
+
+        </td>
+    </tr>
+    </tbody>
+
+
+</table>
+
+</body>
+</html>
