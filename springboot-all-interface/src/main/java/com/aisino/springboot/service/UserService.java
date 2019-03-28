@@ -21,4 +21,28 @@ public interface UserService {
     int getUserByTotal();
 
 
+    /**添加用户
+     * @param user
+     */
+    int addUser(User user);
+
+
+    /**删除用户
+     * @param id
+     * @return
+     */
+    int deleteUser(int id);
+
+
+    /**修改用户
+     * @param user
+     * @return
+     */
+    int updateUser(User user);
+
+
+    /**查询用户
+     * @param id
+     */
+     User getUserByID(Integer id);
 }

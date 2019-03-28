@@ -33,6 +33,14 @@
             <version>2.0.0</version>
         </dependency>
 
+        <!--加载springboot redis，起步依赖，可以减少配置量-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.0.4.RELEASE</version>
+        </dependency>
+
         <!--由于使用zookeeper作为注册中心，需要加入zookeeper客户端-->
         <!-- https://mvnrepository.com/artifact/com.101tec/zkclient -->
         <dependency>

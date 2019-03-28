@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--命名空间必须加上-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body style="margin-left:70px; margin-right:70px; margin-top: 50px">
+
+<form class="form-horizontal" role="form" th:method="post" th:action="@{/user/addUser}">
+    <div class="form-group">
+        <label for="nick" class="col-sm-2 control-label">昵称</label>
+        <div class="col-sm-10">
+            <!--${user?.nick}中，?表示如果为空，就不显示-->
+            <input type="text" class="form-control" name="nick" id="nick" placeholder="请输入昵称" th:value="${user?.nick}"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="col-sm-2 control-label">手机</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号码" th:value="${user?.phone}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="address" class="col-sm-2 control-label">地址</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="address" id="address" placeholder="请输入地址" th:value="${user?.address}"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="col-sm-2 control-label">邮箱</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="email" id="email" placeholder="请输入手机邮箱" th:value="${user?.email}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="hidden" id="id", name="id" th:value="${user?.id}">
+            <button type="submit" class="btn btn-default">提 交</button>
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>
